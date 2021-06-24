@@ -86,7 +86,7 @@ MicroSim <- function(n.i, n.t, v.n, d.c, d.e, TR.out = TRUE, TS.out = TRUE, data
   
   # add €2001336.11 for treatment costs of Zolgensma   
   if (treat == "Zolgensma") {
-    m.C[, 1] <- m.C[, 1] + 681336.11
+    m.C[, 1] <- m.C[, 1] + 2001336.11
   } 
   # add costs for four loading doses of Spinraza
   if (treat == "Spinraza"){
@@ -210,7 +210,7 @@ Effs <- function (M_it, cl = 1, t) {
 # At treat: input which two treatment settings to compare.
 p = Sys.time()
 sim_1     <- MicroSim(n.i, n.t, v.n, d.c, d.e, treat = "BSC", TS.out = FALSE, TR.out = TRUE, data.out = TRUE) 
-sim_2     <- MicroSim(n.i, n.t, v.n, d.c, d.e, treat = "Zolgensma", TS.out = FALSE, TR.out = TRUE, data.out = TRUE)  
+sim_2     <- MicroSim(n.i, n.t, v.n, d.c, d.e, treat = "Spinraza", TS.out = FALSE, TR.out = TRUE, data.out = TRUE)  
 comp.time <- Sys.time() - p
 
 comp.time
@@ -258,4 +258,3 @@ simplot(sim_1, sim_2)
 table_micro  # print the table
 
 Sys.time() - a
-BRRR::skrrrahh(36)
